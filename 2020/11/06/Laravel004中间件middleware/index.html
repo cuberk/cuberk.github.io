@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="OLL公式汇总">
+  <meta name="description" content="参考Laravel5.5文档 中间件middleware用artisan命令创建中间件在Terminal中输入 1php artisan make:middleware AdminMiddleware 会在app\Http\Middleware中新建一个AdminMiddleware.php文件 编辑中间件文件1234567public function handle($request, Clos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OLL公式汇总(to be continue)">
-<meta property="og:url" content="http://yoursite.com/2020/07/12/OLL%E5%85%AC%E5%BC%8F%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:title" content="Laravel学习记录-004:中间件middleware">
+<meta property="og:url" content="http://yoursite.com/2020/11/06/Laravel004%E4%B8%AD%E9%97%B4%E4%BB%B6middleware/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="OLL公式汇总">
+<meta property="og:description" content="参考Laravel5.5文档 中间件middleware用artisan命令创建中间件在Terminal中输入 1php artisan make:middleware AdminMiddleware 会在app\Http\Middleware中新建一个AdminMiddleware.php文件 编辑中间件文件1234567public function handle($request, Clos">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-11T16:59:05.000Z">
-<meta property="article:modified_time" content="2020-11-19T13:56:58.556Z">
+<meta property="article:published_time" content="2020-11-06T08:22:04.000Z">
+<meta property="article:modified_time" content="2020-11-19T16:43:34.099Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="laravel">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/07/12/OLL%E5%85%AC%E5%BC%8F%E6%B1%87%E6%80%BB/">
+<link rel="canonical" href="http://yoursite.com/2020/11/06/Laravel004%E4%B8%AD%E9%97%B4%E4%BB%B6middleware/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>OLL公式汇总(to be continue) | Hexo</title>
+  <title>Laravel学习记录-004:中间件middleware | Hexo</title>
   
 
 
@@ -165,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/OLL%E5%85%AC%E5%BC%8F%E6%B1%87%E6%80%BB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/06/Laravel004%E4%B8%AD%E9%97%B4%E4%BB%B6middleware/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          OLL公式汇总(to be continue)
+          Laravel学习记录-004:中间件middleware
         </h1>
 
         <div class="post-meta">
@@ -188,14 +189,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-07-12 00:59:05" itemprop="dateCreated datePublished" datetime="2020-07-12T00:59:05+08:00">2020-07-12</time>
+              <time title="Created: 2020-11-06 16:22:04" itemprop="dateCreated datePublished" datetime="2020-11-06T16:22:04+08:00">2020-11-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-19 21:56:58" itemprop="dateModified" datetime="2020-11-19T21:56:58+08:00">2020-11-19</time>
+                <time title="Modified: 2020-11-20 00:43:34" itemprop="dateModified" datetime="2020-11-20T00:43:34+08:00">2020-11-20</time>
               </span>
 
           
@@ -209,7 +210,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="OLL公式汇总"><a href="#OLL公式汇总" class="headerlink" title="OLL公式汇总"></a>OLL公式汇总</h1>
+        <p>参考<a href="https://learnku.com/docs/laravel/5.5/middleware/1294" target="_blank" rel="noopener">Laravel5.5文档</a></p>
+<h1 id="中间件middleware"><a href="#中间件middleware" class="headerlink" title="中间件middleware"></a>中间件middleware</h1><h3 id="用artisan命令创建中间件"><a href="#用artisan命令创建中间件" class="headerlink" title="用artisan命令创建中间件"></a>用artisan命令创建中间件</h3><p>在Terminal中输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:middleware AdminMiddleware</span><br></pre></td></tr></table></figure>
+<p>会在app\Http\Middleware中新建一个AdminMiddleware.php文件</p>
+<h3 id="编辑中间件文件"><a href="#编辑中间件文件" class="headerlink" title="编辑中间件文件"></a>编辑中间件文件</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">($request, Closure $next)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Auth::guard(<span class="string">'admin'</span>)-&gt;check())&#123;</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">'admin/login'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $next($request);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载中间件"><a href="#挂载中间件" class="headerlink" title="挂载中间件"></a>挂载中间件</h3><p>编辑app/Http/Kernel.php文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> $routeMiddleware = [</span><br><span class="line">    <span class="string">'admin.auth'</span> =&gt; AdminMiddleware::class, </span><br><span class="line">    ……</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="将中间件放到需要挂载的地方"><a href="#将中间件放到需要挂载的地方" class="headerlink" title="将中间件放到需要挂载的地方"></a>将中间件放到需要挂载的地方</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;middleware(<span class="string">'admin.auth'</span>)-&gt;except([<span class="string">'login'</span>, <span class="string">'loginForm'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -217,6 +228,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/laravel/" rel="tag"># laravel</a>
+          </div>
 
         
 
@@ -224,12 +238,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/04/markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" rel="prev" title="Markdown基本语法">
-      <i class="fa fa-chevron-left"></i> Markdown基本语法
+    <a href="/2020/11/06/Laravel003%E7%8B%AC%E7%AB%8B%E8%AE%BE%E7%BD%AEguard/" rel="prev" title="Laravel学习记录-003:独立设置guard">
+      <i class="fa fa-chevron-left"></i> Laravel学习记录-003:独立设置guard
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/12/PLL%E5%85%AC%E5%BC%8F%E6%B1%87%E6%80%BB/" rel="next" title="PLL公式汇总(to be continue)">
-      PLL公式汇总(to be continue) <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/16/Laravel005view%E6%A8%A1%E6%9D%BF%E7%BB%A7%E6%89%BF/" rel="next" title="Laravel学习记录-005:view模板继承">
+      Laravel学习记录-005:view模板继承 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -289,7 +303,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OLL公式汇总"><span class="nav-number">1.</span> <span class="nav-text">OLL公式汇总</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中间件middleware"><span class="nav-number">1.</span> <span class="nav-text">中间件middleware</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用artisan命令创建中间件"><span class="nav-number">1.0.1.</span> <span class="nav-text">用artisan命令创建中间件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑中间件文件"><span class="nav-number">1.0.2.</span> <span class="nav-text">编辑中间件文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载中间件"><span class="nav-number">1.0.3.</span> <span class="nav-text">挂载中间件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将中间件放到需要挂载的地方"><span class="nav-number">1.0.4.</span> <span class="nav-text">将中间件放到需要挂载的地方</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
